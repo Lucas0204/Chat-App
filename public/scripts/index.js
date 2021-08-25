@@ -23,15 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function registerUsername(event) {
     const username = document.querySelector('.username-field input').value
 
-    if (!username) {
-        return 
+    if (username.trim()) {
+        user = username
+    
+        const popUp = event.target.parentElement.parentElement
+    
+        popUp.style.display = 'none'
     }
 
-    user = username
-
-    const popUp = event.target.parentElement.parentElement
-
-    popUp.style.display = 'none'
 }
 
 function sendMessage() {

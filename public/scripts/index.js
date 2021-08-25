@@ -46,8 +46,3 @@ function sendMessage() {
         document.querySelector('.send-message input').value = ''
     }
 }
-
-async function getMessageHistory() {
-
-    const response = await fetch()
-}

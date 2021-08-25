@@ -1,10 +1,4 @@
-let messageHistory = [
-    'Lucas: Salve',
-    'Igor: Opa, bom',
-    'Lucas: Tudo certo',
-    'Lucas: Tamo Junto',
-    'Igor: é nois'
-]
+let messageHistory = []
 
 const Messages = {
 

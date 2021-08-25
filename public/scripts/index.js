@@ -1,16 +1,22 @@
 let user;
 
+const socket = io('http://localhost:3000')
+
 document.addEventListener('DOMContentLoaded', () => {
 
+    const messagesContainer = document.querySelector('.messages-container')
     const registerUsernameButton = document.querySelector('.username-field button')
     const sendMessageButton = document.querySelector('.send-message button')
     
     registerUsernameButton.addEventListener('click', (event) => {
         registerUsername(event)
-        // messages = getMessages()
     })
 
     sendMessageButton.addEventListener('click', sendMessage)
+
+    socket.on('newMessage', message => {
+        messagesContainer.innerHTML += `<div class="message">${message.user}: ${message.message}</div>`
+    })
 })
 
 
@@ -29,14 +35,13 @@ function registerUsername(event) {
 }
 
 function sendMessage() {
-    
+    const message = document.querySelector('.send-message input').value
+
+    if (message) { 
+        socket.emit('sendMessage', { user, message })
+
+        document.querySelector('.messages-container').innerHTML += `<div class="message">${user}: ${message}</div>`
+
+        document.querySelector('.send-message input').value = ''
+    }
 }
-
-
-// async function getMessages() {
-
-//     const messagesResponse = await fetch('http://localhost:3000/messages')
-//     const messages = await messagesResponse.json()
-
-//     return messages
-// }

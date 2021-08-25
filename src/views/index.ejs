@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+
+    <div class="root">
+
+        <!-- <div class="start-pop-up">
+
+            <label for="username">Digite seu nome de usuário:</label>
+            <div class="username-field">
+                <input type="text" name="username" placeholder="Nome">
+                <button>Entrar</button>
+            </div>
+
+        </div> -->
+
+        <h1 id="welcome-message">Bem-vindo a sala de chat</h1>
+
+        <div class="chat-container">
+
+            <div class="messages-container">
+
+                <% for(let i = 0; i < users.length; i++) {%>
+                    <div class="message"><%=`${users[i]}: ${messages[i]}`%></div>
+                <%}%>
+
+            </div>
+
+            <div class="send-message">
+                <input type="text" name="message" placeholder="Digite sua mensagem">
+                <button>Enviar</button>
+            </div>
+
+        </div>
+        
+    </div>
+    
+</body>
+
+<script src="/scripts/index.js"></script>
+
+</html>

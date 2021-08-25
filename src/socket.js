@@ -1,10 +1,6 @@
 const socketIo = require('socket.io')
 const Messages = require('./model/Messages')
 
-let messages = [
-    { user: 'Diego', message: 'Opa, fala galera!' }
-]
-
 function socket(server) {
 
     const io = socketIo(server)

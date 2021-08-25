@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     registerUsernameButton.addEventListener('click', (event) => {
         registerUsername(event)
+        getMessageHistory()
     })
 
     sendMessageButton.addEventListener('click', sendMessage)
@@ -44,4 +45,9 @@ function sendMessage() {
 
         document.querySelector('.send-message input').value = ''
     }
+}
+
+async function getMessageHistory() {
+
+    const response = await fetch()
 }

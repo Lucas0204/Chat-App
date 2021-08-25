@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     registerUsernameButton.addEventListener('click', (event) => {
         registerUsername(event)
-        getMessageHistory()
     })
 
     sendMessageButton.addEventListener('click', sendMessage)

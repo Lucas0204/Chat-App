@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendMessageButton.addEventListener('click', sendMessage)
 
     socket.on('newMessage', message => {
-        messagesContainer.innerHTML += `<div class="message">${message.user}: ${message.message}</div>`
+        messagesContainer.innerHTML += `<div class="message"><span class="username">${message.user}<span>: ${message.message}</div>`
     })
 })
 
@@ -39,7 +39,7 @@ function sendMessage() {
     if (message) { 
         socket.emit('sendMessage', { user, message })
 
-        document.querySelector('.messages-container').innerHTML += `<div class="message">${user}: ${message}</div>`
+        document.querySelector('.messages-container').innerHTML += `<div class="message owner"><span class="owner-username">${user}</span>: ${message}</div>`
 
         document.querySelector('.send-message input').value = ''
     }

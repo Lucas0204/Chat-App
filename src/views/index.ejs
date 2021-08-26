@@ -29,7 +29,7 @@
 
                 <% if (messages) {%> 
                     <% for(let i = 0; i < messages.length; i++) {%>
-                        <div class="message"><%=`${messages[i].user}: ${messages[i].message}`%></div>
+                        <div class="message"><span class="username"><%=`${messages[i].user}`%></span><%=`: ${messages[i].message}`%></div>
                     <%}%>
                 <%}%> 
             </div>

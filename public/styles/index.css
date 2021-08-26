@@ -63,8 +63,9 @@ body {
 }
 
 .messages-container {
-
     height: 90%;
+
+    padding: .6rem;
 
     border: 1px solid green;
 }
@@ -74,6 +75,23 @@ body {
     font-size: large;
 
     padding: .8rem;
+    margin-bottom: .8rem;
+
+    border: 1px solid #a1a1a1;
+    border-radius: 10px;
+}
+
+.owner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.username {
+    color: rgb(255, 74, 8);
+}
+
+.owner-username {
+    color: darkcyan;
 }
 
 .send-message {

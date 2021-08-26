@@ -2,8 +2,8 @@ const Messages = require('../model/Messages')
 
 class IndexController {
 
-    render(req, res) {
-        const messages = Messages.get()
+    async render(req, res) {
+        const messages = await Messages.get()
         return res.render('index', { messages })
     }
 }

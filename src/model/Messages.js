@@ -1,14 +1,20 @@
-let messageHistory = []
+const client = require('../database')
 
 const Messages = {
 
-    get() {
-        return messageHistory
+    async get() {
+        const messages = JSON.parse(await client.get('messages'))
+        return messages
     },
 
-    save(message) {
-        messageHistory.push(message)
-        return messageHistory
+    async save(message) {
+        const messageHistory = await this.get()
+
+        if (messageHistory) {
+            await client.set('messages', JSON.stringify([ ...messageHistory, message ]))
+        } else {
+            await client.set('messages', JSON.stringify([ message ]))
+        }
     }
 }
 

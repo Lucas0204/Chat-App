@@ -8,13 +8,11 @@ function socket(server) {
     io.on('connection', socket => {
         console.log(`Connected: ${socket.id}`)
     
-        socket.on('sendMessage', message => {
+        socket.on('sendMessage', async message => {
 
-            Messages.save(message)
+            await Messages.save(message)
 
             socket.broadcast.emit('newMessage', message)
-
-            console.log(`${message.user}: ${message.message}`)
         })
     })
 }
